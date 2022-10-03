@@ -7,6 +7,7 @@ from rich.console import Console
 DATA = None
 COLS = None
 
+# Do not alter --------------------------------------------
 def menu() -> any:
 	n = narrator.Narrator()
 	q = narrator.Question({
@@ -37,23 +38,7 @@ def write(filename: str = "registry") -> None:
 		writer = csv.writer(fh, delimiter = ",")
 		for row in data:
 			writer.writerow(row)
-
-def get_row(row_num: int = 0) -> list:
-	row = DATA[row_num]
-	return row
-
-def add_column(entry: any = None) -> bool:
-	COLS.append(entry)
-	return True
-
-def add_to_row(row_num: int = 0, entry: any = None) -> bool:
-	row = DATA[row_num]
-	row.append(entry)
-	return True
-
-def remove_from_row(row_num: int = 0) -> bool:
-	DATA[row_num].pop()
-	return True
+	print("TABLE SAVE SUCCESS!")
 
 def display_table(data: list = []) -> None:
 	if not data: data = DATA
@@ -65,6 +50,24 @@ def display_table(data: list = []) -> None:
 		table.add_row(*row)
 	console = Console()
 	console.print(table)
+# Do not alter --------------------------------------------
+
+def get_row(row_num: int = 1) -> list:
+	row = DATA[row_num - 1]
+	return row
+
+def add_column(entry: any = None) -> bool:
+	COLS.append(entry)
+	return True
+
+def add_to_row(row_num: int = 1, entry: any = None) -> bool:
+	row = DATA[row_num - 1]
+	row.append(entry)
+	return True
+
+def remove_from_row(row_num: int = 0) -> bool:
+	DATA[row_num - 1].pop()
+	return True
 
 def main():
 	
