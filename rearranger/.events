@@ -1,0 +1,28 @@
+#! /bin/bash
+
+IFS_HOLDER=$IFS
+IFS=","
+
+path=$(dirname $(pwd))
+missing=false
+
+while read -r col1 col2 col3
+do
+	if [ "$col1" == "" ]
+	then
+		missing=true
+	elif [ "$col2" == "" ]
+	then
+		missing=true
+	elif [ "$col3" == "" ]
+	then
+		missing=true
+	fi
+done < "data/registry.csv"
+
+if [ "$missing" = true ]
+then
+	echo "REGISTRY DATA CORRUPT. FIX REGISTRY FILE."
+	cd ..
+fi
+IFS=$IFS_HOLDER
