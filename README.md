@@ -1,7 +1,7 @@
 
 | Date              |          |
 |:------------------|:---------|
-| 3 October 2022 | Assigned |
+| 5 October 2022 | Assigned |
 | 16 October 2022    | Due      |
 | Status            | [![GatorGrader](../../actions/workflows/main.yml/badge.svg)](../../actions/workflows/main.yml) |
 

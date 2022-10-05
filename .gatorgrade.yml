@@ -54,9 +54,8 @@
   - description: All questions answered in reflection.md
     check: CountFileParagraphs
     options:
-      fragment: "TODO"
-      count: 0
-      exact: true
+      count: 6
+      exact: false
 
 # Code cops
 
