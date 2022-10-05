@@ -9,7 +9,7 @@
 
 **Reported by `The Reporter` from `` on  `5 October 2022`**
 
-
+`PLACEHOLDER`
 
 ## Overview
 
@@ -33,7 +33,7 @@ You'll complete several main tasks:
 
 ### Supporting media
 
-[![YouTube thumbnail](http://img.youtube.com/vi/1BdOC0gbGAM/hqdefault.jpg)](https://youtube.com/playlist?list=PLJvBsjwXNdlFqLI3pyJdbHCF_i5Su6oYS)
+[![YouTube thumbnail](http://img.youtube.com/vi/4eapZtdVpDM/hqdefault.jpg)](https://youtube.com/playlist?list=PLJvBsjwXNdlFZ377qYXa76_1c-WXTuhA5)
 
 ## Accessing `datamart` Content
 
@@ -103,8 +103,22 @@ Implements and uses the following functions:
 |:-------------|:-----------|:-----------|:----------------------------------------------------------|
 |get_row       |`int`       |`list`      |Returns a chosen row of the table as a list                |
 |add_column    |`str`       |`bool`      |Accepts a string name for column; returns `True` if successful |
-|add_to_row    |`int`, `str`|`bool`      |Accepts a row number and a string of data to add to that row; returns `True` if successful |
-|remove_from_row|`int`      |`bool`      |Accepts a row number from which to delete the last entry; returns `True` if successful |
+|add_to_row    |`int`, `str`|`bool`      |Accepts a row number and a string of data to add to that row; returns `True` if successful† |
+|remove_from_row†† |`int`      |`bool`      |Accepts a row number from which to delete the last entry; returns `True` if successful |
+
+† This function always adds to the end of a row
+†† This function always removes the _last_ entry in a row
+
+To complete this part of the assignment, each member of your team needs to develop `3` questions to ask other tables to gather
+data on their activities pertaining to work they've completed for class. This could be something like (but not limited to):
+
+* number of commits on the `bodega` and `traffic-circle` assignments
+* number of Pull Requests opened and closed on the above-named assignments
+* number of neighborhood members
+
+Asking for all names of neighborhood members is _required_.
+
+Each neighborhood is responsible for gathering data from all other tables in a relatively quick and efficient manner. Most teams will send out 5 representatives to ask questions. Remaining team members should begin to solve `data_creator.py` so that the tool can be made available to neighborhood members.
 
 ### `arranger`
 
@@ -123,17 +137,6 @@ Implements and uses the following function(s):
 |switch_columns|`str`, `str`|`None`      |Retrieves and swaps two column with titles given as `str`             |
 
 `*` The parameters for this function _can_ be `int`, `int`
-
-To complete this part of the assignment, each member of your team needs to develop `3` questions to ask other tables to gather
-data on their activities pertaining to work they've completed for class. This could be something like (but not limited to):
-
-* number of commits on the `bodega` and `traffic-circle` assignments
-* number of Pull Requests opened and closed on the above-named assignments
-* number of neighborhood members
-
-Asking for all names of neighborhood members is _required_.
-
-Each neighborhood is responsible for gathering data from all other tables in a relatively quick and efficient manner. Most teams will send out 5 representatives to ask questions. Remaining team members should begin to solve `data_creator.py` so that the tool can be made available to neighborhood members.
 
 ### analyzer
 
@@ -204,6 +207,18 @@ To make an improvement proposal, you must _create an issue_ on this repository. 
 * selecting the `Improvement Proposal` template 
 
 **You must fill out the entire template and wait for Mayoral approval before starting the improvement.**
+
+#### Improvement suggestions
+
+The functionality for the `datamart` is pretty basic. You probably will get frustrated when you're adding things to columns,
+and the program takes _forever_ to add to all of the rows (you have to do it 1-by-1, as you'll find out). Suggestions for improvements for this work are a bit easier to come up with, such as:
+
+* Adding a list of values as a column (rather than 1-by-1)
+* Deleting an entire column
+* Searching for a list of words rather than just `1` at a time
+* Searching a specific column for a value (rather than the whole table)
+
+This list is not meant to be exhaustive. It's possible that you'll come up with a few more unique to your neighborhood. When you have an idea, _file the issue_ and get to work!
 
 ## Submitting `datamart` Content
 
