@@ -1,4 +1,5 @@
 # TODOs
+
 - office/reflection.md:
   - description: No TODO markers left in reflection.md
     check: MatchFileFragment
@@ -34,35 +35,162 @@
       fragment: "TODO"
       count: 0
       exact: true
-# File existence
+
+# Existential file crisis
 - builder/data/registry.csv:
   - description: registry.csv file exists in builder/data/registry.csv
     check: ConfirmFileExists
-# Code cops
-- builder/data_creator.py:
-  - description: builder/data_creator.py uses a while loop to collect inputs until blank
+- builder/data/registry.csv:
+  - description: table columns are in the order requested by the README
     check: MatchFileRegex
     options:
-      regex: "while\\s[a-zA-Z0-9_]+\\:"
+      regex: '[ID|id|Id],[N|n]eighborhood,[N|n]ame'
       count: 1
+      exact: true
+
+# Code cops
+
+# lists
+- builder/data_creator.py:
+  - description: builder/data_creator.py creates an additional empty list
+    check: MatchFileRegex
+    options:
+      regex: '=(\s)?\[\]'
+      count: 2
       exact: true
 - builder/data_creator.py:
   - description: builder/data_creator.py features a list that uses the .append method
     check: MatchFileRegex
     options:
-      regex: "\\.append\\([a-zA-Z0-9_]+\\)"
+      regex: '\.append\([a-zA-Z0-9_]+\)'
       count: 1
       exact: true
 - builder/data_creator.py:
   - description: builder/data_creator.py features a list that uses add_names function
     check: MatchFileRegex
     options:
-      regex: "add_names\\([a-zA-Z0-9_]+\\)"
+      regex: 'add_names\([a-zA-Z0-9_]+\)'
+      count: 1
+      exact: true
+- builder/table_builder.py:
+  - description: builder/table_builder.py uses the DATA list to add to table
+    check: MatchFileRegex
+    options:
+      regex: 'DATA\[[a-zA-Z0-9\-\s_]+\]'
+      count: 1
+      exact: false
+- builder/table_builder.py:
+  - description
+
+# functions
+- builder/table_builder.py:
+  - description: builder/table_builder.py implements a function called add_column with 1 parameter
+    check: MatchFileRegex
+    options:
+      regex: 'def add_column\([a-zA-Z0-9_\:\s"=]+\)(.*)?\:'
+      count: 1
+      exact: true
+- builder/table_builder.py:
+  - description: builder/table_builder.py calls add_column with 1 argument
+    check: MatchFileRegex
+    options:
+      regex: 'add_column\([a-zA-Z0-9_]+\)(?!(\s)?\:)'
+      count: 1
+      exact: true
+- builder/table_builder.py:
+  - description: builder/table_builder.py implements a function called get_row with 1 parameter
+    check: MatchFileRegex
+    options:
+      regex: 'def get_row\([a-zA-Z0-9_\:\s"=]+\)(.*)?\:'
+      count: 1
+      exact: true
+- builder/table_builder.py:
+  - description: builder/table_builder.py calls add_column with 1 argument
+    check: MatchFileRegex
+    options:
+      regex: 'get_row\([a-zA-Z0-9_]+\)(?!(\s)?\:)'
+      count: 1
+      exact: true
+- builder/table_builder.py:
+  - description: builder/table_builder.py implements a function called add_to_row with 2 parameters
+    check: MatchFileRegex
+    options:
+      regex: 'def add_to_row\([a-zA-Z0-9_\:\s"=]+,(\s)?[a-zA-Z0-9_\:\s"=]+\)(.*)?\:'
+      count: 1
+      exact: true
+- builder/table_builder.py:
+  - description: builder/table_builder.py calls add_to_row with 2 arguments
+    check: MatchFileRegex
+    options:
+      regex: 'add_to_row\([a-zA-Z0-9_]+,(\s)?[a-zA-Z0-9_]+\)'
+      count: 1
+      exact: true
+- builder/table_builder.py:
+  - description: builder/table_builder.py implements a function called remove_from_row with 1 parameter
+    check: MatchFileRegex
+    options:
+      regex: 'def remove_from_row\([a-zA-Z0-9_\:\s"=]+\)(.*)?\:'
+      count: 1
+      exact: true
+- builder/table_builder.py:
+  - description: builder/table_builder.py calls add_column with 1 argument
+    check: MatchFileRegex
+    options:
+      regex: 'add_column\([a-zA-Z0-9_]+\)(?!(\s)?\:)'
       count: 1
       exact: true
 - arranger/table_arranger.py:
-  - description: arranger/table_arranger.py implements a switch_columns function with two parameters
+  - description: arranger/table_arranger.py implements a switch_columns function with 2 parameters
     check: MatchFileRegex
     options:
-      regex: 'def\\sswitch_columns(\\s)?\\([a-zA-Z0-9_=\\s\\:](\\s)?'
+      regex: 'def switch_columns(\s)?\([a-zA-Z0-9_\:\s"=]+,(\s)?[a-zA-Z0-9_\:\s"=]+\)(.*)?\:'
+      count: 1
+- arranger/table_arranger.py:
+  - description: arranger/table_arranger.py calls switch_columns with 2 arguments
+    check: MatchFileRegex
+    options:
+      regex: 'switch_columns\([a-zA-Z0-9_]+,(\s)?[a-zA-Z0-9_]+\)'
+      count: 1
+      exact: true
+- arranger/table_arranger.py:
+  - description: arranger/table_arranger.py calls the sorter function with one argument
+    check: MatchFileRegex
+    options:
+      regex: 'sorter\([a-zA-Z0-9_]+\)'
+      count: 1
+- analyzer/table_analyzer.py:
+  - description: analyzer/table_analyzer.py implements a counter function with 1 parameter
+    check: MatchFileRegex
+    options:
+      regex: 'def counter(\s)?\([a-zA-Z0-9_\:\s"=]+\)(.*)?\:'
+      count: 1
+- analyzer/table_analyzer.py:
+  - description: analyzer/table_analyzer.py calls the counter function with one argument
+    check: MatchFileRegex
+    options:
+      regex: 'counter\([a-zA-Z0-9_]+\)'
+      count: 1
+- analyzer/table_analyzer.py:
+  - description: analyzer/table_analyzer.py implements a avg_column function with 1 parameter
+    check: MatchFileRegex
+    options:
+      regex: 'def avg_column(\s)?\([a-zA-Z0-9_\:\s"=]+\)(.*)?\:'
+      count: 1
+- analyzer/table_analyzer.py:
+  - description: analyzer/table_analyzer.py calls the avg_column function with one argument
+    check: MatchFileRegex
+    options:
+      regex: 'avg_column\([a-zA-Z0-9_]+\)'
+      count: 1
+- analyzer/table_analyzer.py:
+  - description: analyzer/table_analyzer.py implements a max_value function with 1 parameter
+    check: MatchFileRegex
+    options:
+      regex: 'def max_value(\s)?\([a-zA-Z0-9_\:\s"=]+\)(.*)?\:'
+      count: 1
+- analyzer/table_analyzer.py:
+  - description: analyzer/table_analyzer.py calls the max_value function with one argument
+    check: MatchFileRegex
+    options:
+      regex: 'max_value\([a-zA-Z0-9_]+\)'
       count: 1

@@ -89,11 +89,14 @@ def main():
 		if response == 1:
 			display_table()
 		if response == 2:
-			result = avg_column(input("Column to average: "))
+			column = input("Column to average: ")
+			result = avg_column(column)
 		if response == 3:
-			result = max_value(input("Column to find max: "))
+			column = input("Column to find max: ")
+			result = max_value(column)
 		if response == 4:
-			result = counter(input("Search term: "))
+			term = input("Search term: ")
+			result = counter(term)
 		if result:
 			print(result)
 

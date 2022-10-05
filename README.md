@@ -109,15 +109,32 @@ Requirements for each file are enumerated below. However, a general note:
 > This will require a set of `if` statements to test the outcome of the `menu` function and determine which
 > number was chosen from the menu
 
+#### Note
+
+These programs use two `global` variables to house the data in the table and the names of columns. Use:
+
+|Variable |Purpose |
+|:--------|:-------|
+|DATA†     |Holds data from table |
+|COLS††     |Holds names of columns |
+
+`†` This is a `list` of `list`s -- so, be careful
+`††` The columns list is _always_ the first list/row
+
 ### `builder`
 
 #### `data_creator.py`
 
+Collects the names of individual residents of various neighborhoods.
+
 Leverges the `main` function to:
 
+* Creates a blank list to hold user names input to program
 * Uses the `add_names` function to add a `list` of names to a newly-created `registry.csv` file
 
 #### `table_builder.py`
+
+Adds additional columns to data to complete the data set.
 
 Implements and uses the following functions:
 
@@ -149,6 +166,8 @@ Each neighborhood is responsible for gathering data from all other tables in a r
 
 #### `table_arranger.py`
 
+Allows us to rearrange the table to suit various data analysis needs.
+
 Uses the following function (it is already written for you):
 
 |Function name |Parameters  |Return type | Description                                               |
@@ -163,7 +182,16 @@ Implements and uses the following function(s):
 
 `*` The parameters for this function _can_ be `int`, `int`
 
+##### Note
+
+This must rearrange the table such that `ID` comes first, followed by `Neighborhood`, then `Name`. Any other rearranging
+you do is extra (though it might be helpful when looking at the data).
+
+In addition, you must sort the table by Neighborhood name when finished with the assignment.
+
 ### analyzer
+
+Leverages some basic analysis to tell us facts about facts (metadata) about neighborhoods.
 
 Once all data has been collected and entered for all respondents, neighborhoods should complete the `table_analyzer.py` file, implementing and using:
 
@@ -242,6 +270,7 @@ and the program takes _forever_ to add to all of the rows (you have to do it 1-b
 * Deleting an entire column
 * Searching for a list of words rather than just `1` at a time
 * Searching a specific column for a value (rather than the whole table)
+* Sorting by more than one column at a time
 
 This list is not meant to be exhaustive. It's possible that you'll come up with a few more unique to your neighborhood. When you have an idea, _file the issue_ and get to work!
 

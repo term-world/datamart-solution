@@ -1,7 +1,7 @@
-Resident Name,ID,Neighborhood,Favorite Color,Lucky Number
-Danny,2,Ix,Orange,0
-Jeff,3,Ix,Orange,0
-Mai,4,Ix,Orange,0
-Paige,5,Ix,Orange,0
-Ochir,6,Ix,Orange,0
-Professor,1,Ix,Pink,48
+ID,Neighborhood,Name,Favorite Color,Lucky Number
+2,Ix,Danny,Orange,0
+3,Ix,Jeff,Orange,0
+4,Ix,Mai,Orange,0
+5,Ix,Paige,Orange,0
+6,Ix,Ochir,Orange,0
+1,Ix,Professor,Pink,48
