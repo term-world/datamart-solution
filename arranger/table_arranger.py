@@ -49,12 +49,13 @@ def display_table(data: list = []) -> None:
 	console = Console()
 	console.print(table)
 
-def sorter(index: int = 0) -> list:
+def sorter(column: str = "ID") -> None:
+	index = COLS.index(column)
 	DATA.sort(key = lambda DATA: DATA[index])
 	display_table()
 # Do not alter ------------------------------------------
 
-def switch_columns(col_1: str = "ID", col_2: str = "Resident Name"):
+def switch_columns(col_1: str = "ID", col_2: str = "Resident Name") -> None:
 	# Switch headers
 	c1 = COLS.index(col_1)
 	c2 = COLS.index(col_2)
@@ -83,8 +84,7 @@ def main():
 			display_table()
 		if response == 2:
 			sort_on = input("Name of column to sort: ")
-			sort_idx = COLS.index(sort_on)
-			sorter(sort_idx)
+			sorter(sort_on)
 		if response == 3:
 			col_1 = input("Column name to switch: ")
 			col_2 = input("Column name to swtich with: ")

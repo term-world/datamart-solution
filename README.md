@@ -7,7 +7,7 @@
 
 # GLORIOUS NEW DATA PROJECT ON HORIZON! FUTURE OF `term-world` LOOKING BRIGHTER THAN EVER!
 
-**Delivered by `Official Mayor-Endorsed News` on `3 October 2022`!**
+**Delivered by `Official Mayor-Endorsed News` on `5 October 2022`!**
 
 Welcome to the inaugural report from `Official Mayor-Endorsed News`!
 Given the recent defunding and dissolution of TNN following last week's
@@ -55,7 +55,7 @@ You'll complete several main tasks:
 
 ### Supporting media
 
-[![YouTube thumbnail](http://img.youtube.com/vi/1BdOC0gbGAM/hqdefault.jpg)](https://youtube.com/playlist?list=PLJvBsjwXNdlFqLI3pyJdbHCF_i5Su6oYS)
+[![YouTube thumbnail](http://img.youtube.com/vi/4eapZtdVpDM/hqdefault.jpg)](https://youtube.com/playlist?list=PLJvBsjwXNdlFZ377qYXa76_1c-WXTuhA5)
 
 ## Accessing `datamart` Content
 
@@ -88,7 +88,94 @@ While `pull` is used to *update* the contents of a repository that already exist
 
 ## Completing `datamart` content
 
+The `datamart` is composed of three distinct pieces, sorted into folders:
 
+1. The `builder/data_creator.py` and `builder/table_builder.py` files which create and edit the data
+  * The `builder/data_creator.py` file should be completed and run _first_; all other files depend on its output
+2. The `arranger/table_arranger.py` file 
+  * sorts columns, reorganizes (i.e. switches) column layout
+3. `analyzer/table_analyzer.py` file
+  * Performs basic analysis on the data including:
+    * averaging columns
+    * finding the maximum value
+    * counts the occurences of a given search term across _the whole table_
+
+As written above, **finish the `data_creator.py`** file first, as file storing the data isn't created until 
+we run the creator program and provide inputs.
+
+Requirements for each file are enumerated below. However, a general note:
+
+> To solve each after the `data_creator.py`, we need to handle the `menu` options that appear on the screen. 
+> This will require a set of `if` statements to test the outcome of the `menu` function and determine which
+> number was chosen from the menu
+
+### `builder`
+
+#### `data_creator.py`
+
+Leverges the `main` function to:
+
+* Uses the `add_names` function to add a `list` of names to a newly-created `registry.csv` file
+
+#### `table_builder.py`
+
+Implements and uses the following functions:
+
+|Function name |Parameters  |Return type | Description                                               |
+|:-------------|:-----------|:-----------|:----------------------------------------------------------|
+|get_row       |`int`       |`list`      |Returns a chosen row of the table as a list                |
+|add_column    |`str`       |`bool`      |Accepts a string name for column; returns `True` if successful |
+|add_to_row†   |`int`, `str`|`bool`      |Accepts a row number and a string of data to add to that row; returns `True` if successful |
+|remove_from_row†† |`int`      |`bool`      |Accepts a row number from which to delete the last entry; returns `True` if successful |
+
+`†` This function always adds to the end of a row
+
+`††` This function always removes the _last_ entry in a row
+
+To complete this part of the assignment, each member of your team needs to develop `3` questions to ask other tables to gather
+data on their activities pertaining to work they've completed for class. This could be something like (but not limited to):
+
+* number of commits on the `bodega` and `traffic-circle` assignments
+* number of Pull Requests opened and closed on the above-named assignments
+* number of neighborhood members
+
+Asking for all names of neighborhood members is _required_ and does not count toward your `3` question total. When developing questions, think broadly about all of the data that you think is of interest re: your fellow citizens' work in `term-world`.
+
+It's not like we're collecting this for any _reason_, you know.
+
+Each neighborhood is responsible for gathering data from all other tables in a relatively quick and efficient manner. Most teams will send out 5 representatives to ask questions. Remaining team members should begin to solve `data_creator.py` so that the tool can be made available to neighborhood members.
+
+### `arranger`
+
+#### `table_arranger.py`
+
+Uses the following function (it is already written for you):
+
+|Function name |Parameters  |Return type | Description                                               |
+|:-------------|:-----------|:-----------|:----------------------------------------------------------|
+|sorter        |`str`       |`None`      |Sorts column by given name (`str`) provided as parameter             |
+
+Implements and uses the following function(s):
+
+|Function name |Parameters*  |Return type | Description                                               |
+|:-------------|:-----------|:-----------|:----------------------------------------------------------|
+|switch_columns|`str`, `str`|`None`      |Retrieves and swaps two column with titles given as `str`             |
+
+`*` The parameters for this function _can_ be `int`, `int`
+
+### analyzer
+
+Once all data has been collected and entered for all respondents, neighborhoods should complete the `table_analyzer.py` file, implementing and using:
+
+|Function name |Parameters*  |Return type | Description                                               |
+|:-------------|:-----------|:-----------|:----------------------------------------------------------|
+|counter|`str`|`int`      |Counts instances of the `str` entered as a parameter, returns count of that `str`            |
+|avg_column| `str` | `float` |Takes the column name as a parameter and averages the contents of that column |
+|max_value|`str`|`any`|Takes column name as parameter and finds the maximum value in that column |
+
+`*` The parameters for these functions _can_ be `int`
+
+Your [reflection](office/reflection.md) should report the outcomes of these operations.
 
 ### Collaborative reflection
 
@@ -121,14 +208,14 @@ git checkout -b FEATURE
 Just be sure to replace the `FEATURE` fragment with a name that succinctly describes the work you're contributing to the overall project. (You might also consider including your username within the branch name if you think it'll help your group stay organized.) For instance, if the user `dluman` and someone else are working on the `east` folders' `Stoplight.py`, `traffic-circle`, he might run the command:
 
 ```
-git checkout -b east-stoplight
+git checkout -b table-analyzer
 ```
 
 **Whenever you're starting your work, you should always `git pull` from any branches you're using in tandem with _other folks_. This guarantees that you solve content issues early and _often_.**
 
-## Evaluating `traffic-circle` Content
+## Evaluating `datamart` Content
 
-In order to run the `grader` for this week's work, you'll need to be in the topmost level of the `traffic-circle` folder (which should have been cloned within the `workshop`). Once there, run the command:
+In order to run the `grader` for this week's work, you'll need to be in the topmost level of the `datamart` folder (which should have been cloned within the `workshop`). Once there, run the command:
 
 ```
 gatorgrade
@@ -146,7 +233,19 @@ To make an improvement proposal, you must _create an issue_ on this repository. 
 
 **You must fill out the entire template and wait for Mayoral approval before starting the improvement.**
 
-## Submitting `traffic-circle` Content
+#### Improvement suggestions
+
+The functionality for the `datamart` is pretty basic. You probably will get frustrated when you're adding things to columns,
+and the program takes _forever_ to add to all of the rows (you have to do it 1-by-1, as you'll find out). Suggestions for improvements for this work are a bit easier to come up with, such as:
+
+* Adding a list of values as a column (rather than 1-by-1)
+* Deleting an entire column
+* Searching for a list of words rather than just `1` at a time
+* Searching a specific column for a value (rather than the whole table)
+
+This list is not meant to be exhaustive. It's possible that you'll come up with a few more unique to your neighborhood. When you have an idea, _file the issue_ and get to work!
+
+## Submitting `datamart` Content
 
 Considering that the work you're doing for the `bodega` will be in a particular `branch` of the repository, there's a small adjustment that has to be made to our normal `add`, `commit`, `push` process.
 
@@ -184,7 +283,7 @@ Now, in the top left corner select the branch you wish to add your updated chang
 
 You'll also be responsible for responding to and reviewing pull requests created by other collaborators on your team. Comment on each other's work about changes you'd like to see made to code submitted, and be sure to keep all communication both specific and professional.
 
-## Merging `traffic-circle` Content on GitHub
+## Merging `datamart` Content on GitHub
 
 After all collaborators have had a chance to weigh in on a new pull request, if the work is up to snuff and ready to join the "production-ready" `main` branch, then your designated neighborhood team lead will have to merge that work into the `main` branch.
 
@@ -204,7 +303,7 @@ To resolve said conflicts, you'll need to delete the portion of code you don't w
 
 Once complete, click `Mark as resolved` followed by `Commit merge`, and the changes on the branch will be joined with the `main` branch!
 
-## Updating `traffic-circle` Content in Your Local Workspace
+## Updating `datamart` Content in Your Local Workspace
 
 At some point you may wish to update the content in your local workspace with the changes being implemented by your teammates. 
 
@@ -229,7 +328,7 @@ git fetch --all
 Once you've received this information, to `checkout` the `east-stoplight` branch (for example):
 
 ```
-git checkout --track origin/east-stoplight
+git checkout --track origin/table-analyzer
 ```
 
 This will copy that branch from GitHub to your local workspace. You'll now also be able to `push` and `pull` to/from it.

@@ -1,0 +1,68 @@
+# TODOs
+- office/reflection.md:
+  - description: No TODO markers left in reflection.md
+    check: MatchFileFragment
+    options:
+      fragment: "TODO"
+      count: 0
+      exact: true
+- builder/data_creator.py:
+  - description: No TODO markers left in data_creator.py
+    check: MatchFileFragment
+    options:
+      fragment: "TODO"
+      count: 0
+      exact: true
+- builder/table_builder.py:
+  - description: No TODO markers left in table_builder.py
+    check: MatchFileFragment
+    options:
+      fragment: "TODO"
+      count: 0
+      exact: true
+- arranger/table_arranger.py:
+  - description: No TODO markers left in table_arranger.py
+    check: MatchFileFragment
+    options:
+      fragment: "TODO"
+      count: 0
+      exact: true
+- analyzer/table_analyzer.py:
+  - description: No TODO markers left in table_analyzer.py
+    check: MatchFileFragment
+    options:
+      fragment: "TODO"
+      count: 0
+      exact: true
+# File existence
+- builder/data/registry.csv:
+  - description: registry.csv file exists in builder/data/registry.csv
+    check: ConfirmFileExists
+# Code cops
+- builder/data_creator.py:
+  - description: builder/data_creator.py uses a while loop to collect inputs until blank
+    check: MatchFileRegex
+    options:
+      regex: "while\\s[a-zA-Z0-9_]+\\:"
+      count: 1
+      exact: true
+- builder/data_creator.py:
+  - description: builder/data_creator.py features a list that uses the .append method
+    check: MatchFileRegex
+    options:
+      regex: "\\.append\\([a-zA-Z0-9_]+\\)"
+      count: 1
+      exact: true
+- builder/data_creator.py:
+  - description: builder/data_creator.py features a list that uses add_names function
+    check: MatchFileRegex
+    options:
+      regex: "add_names\\([a-zA-Z0-9_]+\\)"
+      count: 1
+      exact: true
+- arranger/table_arranger.py:
+  - description: arranger/table_arranger.py implements a switch_columns function with two parameters
+    check: MatchFileRegex
+    options:
+      regex: 'def\\sswitch_columns(\\s)?\\([a-zA-Z0-9_=\\s\\:](\\s)?'
+      count: 1
