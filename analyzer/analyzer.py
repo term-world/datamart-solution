@@ -54,11 +54,23 @@ def counter(term: str = "") -> int:
 			count += 1
 	return count
 
-def max_value(column: int = 0) -> any:
-	pass
+def max_value(column: str = "") -> any:
+	max = 0
+	column = COLS.index(column)
+	for row in DATA:
+		value = int(row[column])
+		if value > max:
+			max = value
+	return max
 
-def avg_column(column: int = 0) -> int:
-	pass
+def avg_column(column: str = "") -> int:
+	total = 0
+	values = []
+	column = COLS.index(column)
+	for row in DATA:
+		total += row[column]
+		values.append(row[column])
+	return total / len(values)
 
 def main():
 
@@ -70,17 +82,19 @@ def main():
 	# Do not alter
 	
 	while True:
+		result = None
 		response = menu()
 		if not response:
 			break
 		if response == 1:
 			display_table()
 		if response == 2:
-			pass
+			result = avg_column(input("Column to average: "))
 		if response == 3:
-			pass
+			result = max_value(input("Column to find max: "))
 		if response == 4:
 			result = counter(input("Search term: "))
+		if result:
 			print(result)
 
 if __name__ == "__main__":
