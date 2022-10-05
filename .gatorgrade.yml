@@ -48,6 +48,16 @@
       count: 1
       exact: true
 
+# Reflection data
+
+- office/reflection.md:
+  - description: All questions answered in reflection.md
+    check: CountFileParagraphs
+    options:
+      fragment: "TODO"
+      count: 0
+      exact: true
+
 # Code cops
 
 # lists
@@ -80,7 +90,44 @@
       count: 1
       exact: false
 - builder/table_builder.py:
-  - description
+  - description: builder/table_builder.py appends to the COLS variable when adding columns
+    check: MatchFileRegex
+    options:
+        regex: 'COLS\.append\([a-zA-Z0-9_]+\)'
+        count: 1
+        exact: false
+- builder/table_builder.py:
+  - description: builder/table_builder.py uses the pop() method to remove from row and/or column
+    check: MatchFileRegex
+    options:
+        regex: '\.pop\(\)'
+        count: 1
+        exact: false
+- arranger/table_arranger.py:
+  - description: arranger/table_arranger.py uses the index method to retrieve list addresses
+    check: MatchFileRegex
+    options:
+      regex: '\.index\([a-zA-Z0-9_]+\)'
+      count: 3
+      exact: false
+
+# Iteration
+
+- arranger/table_arranger.py:
+  - description: arranger/table_arranger.py uses a for loop with the DATA variable to switch columns
+    check: MatchFileRegex
+    options:
+      regex: 'for [a-zA-Z0-9_]+ in DATA\:'
+      count: 1
+      exact: false
+  
+- analyzer/table_analyzer.py:
+  - description: analyzer/table_analyzer.py uses for loops with the DATA variable to discover data
+    check: MatchFileRegex
+    options:
+      regex: 'for [a-zA-Z0-9_]+ in DATA\:'
+      count: 3
+      exact: false
 
 # functions
 - builder/table_builder.py:
