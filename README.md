@@ -103,11 +103,12 @@ Implements and uses the following functions:
 |:-------------|:-----------|:-----------|:----------------------------------------------------------|
 |get_row       |`int`       |`list`      |Returns a chosen row of the table as a list                |
 |add_column    |`str`       |`bool`      |Accepts a string name for column; returns `True` if successful |
-|add_to_row    |`int`, `str`|`bool`      |Accepts a row number and a string of data to add to that row; returns `True` if successful† |
+|add_to_row†   |`int`, `str`|`bool`      |Accepts a row number and a string of data to add to that row; returns `True` if successful |
 |remove_from_row†† |`int`      |`bool`      |Accepts a row number from which to delete the last entry; returns `True` if successful |
 
-† This function always adds to the end of a row
-†† This function always removes the _last_ entry in a row
+`†` This function always adds to the end of a row
+
+`††` This function always removes the _last_ entry in a row
 
 To complete this part of the assignment, each member of your team needs to develop `3` questions to ask other tables to gather
 data on their activities pertaining to work they've completed for class. This could be something like (but not limited to):
@@ -116,7 +117,9 @@ data on their activities pertaining to work they've completed for class. This co
 * number of Pull Requests opened and closed on the above-named assignments
 * number of neighborhood members
 
-Asking for all names of neighborhood members is _required_.
+Asking for all names of neighborhood members is _required_ and does not count toward your `3` question total. When developing questions, think broadly about all of the data that you think is of interest re: your fellow citizens' work in `term-world`.
+
+It's not like we're collecting this for any _reason_, you know.
 
 Each neighborhood is responsible for gathering data from all other tables in a relatively quick and efficient manner. Most teams will send out 5 representatives to ask questions. Remaining team members should begin to solve `data_creator.py` so that the tool can be made available to neighborhood members.
 
