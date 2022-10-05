@@ -109,6 +109,13 @@
       regex: '\.index\([a-zA-Z0-9_]+\)'
       count: 3
       exact: false
+- analyzer/table_analyzer.py:
+  - description: analyzer/table_analyzer.py uses the len() function to compute averages
+    check: MatchFileRegex
+    options:
+      regex: 'len\([a-zA-Z0-9_]+\)'
+      count: 1
+      exact: false
 
 # Iteration
 
@@ -119,7 +126,6 @@
       regex: 'for [a-zA-Z0-9_]+ in DATA\:'
       count: 1
       exact: false
-  
 - analyzer/table_analyzer.py:
   - description: analyzer/table_analyzer.py uses for loops with the DATA variable to discover data
     check: MatchFileRegex
