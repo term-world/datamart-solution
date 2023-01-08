@@ -1,13 +1,13 @@
 
 | Date              |          |
 |:------------------|:---------|
-| 5 October 2022 | Assigned |
-| 16 October 2022    | Due      |
+| TODO | Assigned |
+| TODO| Due      |
 | Status            | [![GatorGrader](../../actions/workflows/main.yml/badge.svg)](../../actions/workflows/main.yml) |
 
 # GLORIOUS NEW DATA PROJECT ON HORIZON! FUTURE OF `term-world` LOOKING BRIGHTER THAN EVER!
 
-**Reported by `Official Mayor-Endorsed News` on `5 October 2022`**
+**Reported by `Official Mayor-Endorsed News` on `TODO (DATE)`**
 
 Welcome to the inaugural report from `Official Mayor-Endorsed News`!
 Given the recent defunding and dissolution of TNN following last week's
