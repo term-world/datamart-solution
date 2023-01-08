@@ -361,3 +361,11 @@ git checkout --track origin/table-analyzer
 ```
 
 This will copy that branch from GitHub to your local workspace. You'll now also be able to `push` and `pull` to/from it.
+
+## `term-world` Server Backup Policy
+
+**While we may use this server to store code, you are responsible for using GitHub as your main backup.**
+
+In the event that the `term-world` server goes down for any unforeseen reason, your work may be lost. Though this server is backed up on a regular (i.e., weekly) basis, there is no guarantee that up-to-the-minute data for your work will be restored.
+
+Remember: to err is human; to back up your work is *divine*.
