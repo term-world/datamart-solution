@@ -273,7 +273,7 @@ and the program takes _forever_ to add to all of the rows (you have to do it 1-b
 |Searching for words     |Searching for a list of words rather than just `1` at a time    |      |
 |Searching a column                |Searching a specific column for a value (rather than the whole table)    |      |
 |Sorting information                |Sorting by more than one column at a time     |      |
-|                |     |      |
+|Deleting names                |Deleting a name in `data_creator.py` for it to no longer exist in the `registry.csv`     | Look into the `table_builder.py`     |
 |                |     |      |
 |                |     |      |
 |                |     |      |
