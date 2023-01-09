@@ -251,7 +251,7 @@ gatorgrade
 
 ### Making an improvement proposal
 
-This assignment begins your opportunity to propose and improve the world of `term-world` at-large. For this assignment, proposals may include making graphics to improve the `bodega` site experience, creating new items or actions in the `traffic-circle` itself or another assignment-related improvement not contemplated in the prior narrow categories.
+In this assignment you have the opportunity to propose and improve the world of `term-world` at-large. For this assignment, proposals may include adding a functionality that deletes an entire column, making any of the `datamart` python files more optimal or another assignment-related improvement not contemplated in the prior narrow categories.
 
 To make an improvement proposal, you must _create an issue_ on this repository. Do so by:
 
@@ -283,8 +283,6 @@ This list is not meant to be exhaustive. It's possible that you'll come up with 
 
 ## Submitting `datamart` Content
 
-Considering that the work you're doing for the `bodega` will be in a particular `branch` of the repository, there's a small adjustment that has to be made to our normal `add`, `commit`, `push` process.
-
 When you're ready to push to GitHub, do the normal `add` and `commit` routines. Recall:
 
 ```
@@ -303,10 +301,10 @@ However, when it comes to push, run this slightly expanded command:
 git push origin YOUR_BRANCH_NAME
 ```
 
-We're still using `git push`, but this time we're adding an extra layer of information to the command; to be precise, we're specifically instructing `git` to push our changes to a particular branch of the repository (*your* branch). In the example regarding the `bodega_cat`, the command to run would look like:
+We're still using `git push`, but this time we're adding an extra layer of information to the command; to be precise, we're specifically instructing `git` to push our changes to a particular branch of the repository (*your* branch). In the example regarding the `table_builder`, the command to run would look like:
 
 ```
-git push origin east-stoplight
+git push origin table_builder
 ```
 
 ### A "Pull Request"
@@ -361,7 +359,7 @@ First, `fetch` all of the changes from the `remote` (GitHub):
 git fetch --all
 ```
 
-Once you've received this information, to `checkout` the `east-stoplight` branch (for example):
+Once you've received this information, to `checkout` the `table-analyzer` branch (for example):
 
 ```
 git checkout --track origin/table-analyzer
