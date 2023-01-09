@@ -225,18 +225,18 @@ You'll see firsthand just how useful this is as we work collaboratively over the
 
 So, how do we do that?
 
-First things first, navigate to the repository being worked on in your terminal window. For this content, that's the cloned `traffic-circle` in your `workshop`.
+First things first, navigate to the repository being worked on in your terminal window. For this content, that's the cloned `datamart` in your `workshop`.
 
 Then, run the following command:
 
 ```
-git checkout -b FEATURE
+git checkout -b BRANCH-NAME
 ```
 
-Just be sure to replace the `FEATURE` fragment with a name that succinctly describes the work you're contributing to the overall project. (You might also consider including your username within the branch name if you think it'll help your group stay organized.) For instance, if the user `dluman` and someone else are working on the `east` folders' `Stoplight.py`, `traffic-circle`, he might run the command:
+Just be sure to replace the `BRANCH-NAME` with a name that succinctly describes the work you're contributing to the overall project. (You might also consider including your username within the branch name if you think it'll help your group stay organized.) For instance, if the user `keven` and someone else are working on the `builder` folders' `table_builder.py`, `datamart`, he might run the command:
 
 ```
-git checkout -b table-analyzer
+git checkout -b keven-table_builder
 ```
 
 **Whenever you're starting your work, you should always `git pull` from any branches you're using in tandem with _other folks_. This guarantees that you solve content issues early and _often_.**
