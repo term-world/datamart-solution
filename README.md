@@ -1,13 +1,13 @@
 
 | Date              |          |
 |:------------------|:---------|
-| 5 October 2022 | Assigned |
-| 16 October 2022    | Due      |
+| TODO | Assigned |
+| TODO| Due      |
 | Status            | [![GatorGrader](../../actions/workflows/main.yml/badge.svg)](../../actions/workflows/main.yml) |
 
 # GLORIOUS NEW DATA PROJECT ON HORIZON! FUTURE OF `term-world` LOOKING BRIGHTER THAN EVER!
 
-**Reported by `Official Mayor-Endorsed News` on `5 October 2022`**
+**Reported by `Official Mayor-Endorsed News` on `TODO (DATE)`**
 
 Welcome to the inaugural report from `Official Mayor-Endorsed News`!
 Given the recent defunding and dissolution of TNN following last week's
@@ -225,18 +225,18 @@ You'll see firsthand just how useful this is as we work collaboratively over the
 
 So, how do we do that?
 
-First things first, navigate to the repository being worked on in your terminal window. For this content, that's the cloned `traffic-circle` in your `workshop`.
+First things first, navigate to the repository being worked on in your terminal window. For this content, that's the cloned `datamart` in your `workshop`.
 
 Then, run the following command:
 
 ```
-git checkout -b FEATURE
+git checkout -b BRANCH-NAME
 ```
 
-Just be sure to replace the `FEATURE` fragment with a name that succinctly describes the work you're contributing to the overall project. (You might also consider including your username within the branch name if you think it'll help your group stay organized.) For instance, if the user `dluman` and someone else are working on the `east` folders' `Stoplight.py`, `traffic-circle`, he might run the command:
+Just be sure to replace the `BRANCH-NAME` with a name that succinctly describes the work you're contributing to the overall project. (You might also consider including your username within the branch name if you think it'll help your group stay organized.) For instance, if the user `keven` and someone else are working on the `builder` folders' `table_builder.py`, `datamart`, he might run the command:
 
 ```
-git checkout -b table-analyzer
+git checkout -b keven-table_builder
 ```
 
 **Whenever you're starting your work, you should always `git pull` from any branches you're using in tandem with _other folks_. This guarantees that you solve content issues early and _often_.**
@@ -251,7 +251,7 @@ gatorgrade
 
 ### Making an improvement proposal
 
-This assignment begins your opportunity to propose and improve the world of `term-world` at-large. For this assignment, proposals may include making graphics to improve the `bodega` site experience, creating new items or actions in the `traffic-circle` itself or another assignment-related improvement not contemplated in the prior narrow categories.
+In this assignment you have the opportunity to propose and improve the world of `term-world` at-large. For this assignment, proposals may include adding a functionality that deletes an entire column, making any of the `datamart` python files more optimal or another assignment-related improvement not contemplated in the prior narrow categories.
 
 To make an improvement proposal, you must _create an issue_ on this repository. Do so by:
 
@@ -266,17 +266,22 @@ To make an improvement proposal, you must _create an issue_ on this repository. 
 The functionality for the `datamart` is pretty basic. You probably will get frustrated when you're adding things to columns,
 and the program takes _forever_ to add to all of the rows (you have to do it 1-by-1, as you'll find out). Suggestions for improvements for this work are a bit easier to come up with, such as:
 
-* Adding a list of values as a column (rather than 1-by-1)
-* Deleting an entire column
-* Searching for a list of words rather than just `1` at a time
-* Searching a specific column for a value (rather than the whole table)
-* Sorting by more than one column at a time
+|Improvement Suggestions |Description        |Example(s)         |
+|:--------------------|:------------------|:----------|
+|Adding lists            |Adding a list of values as a column (rather than 1-by-1)     |      |
+|Deleting column              |Adding a functionality that deletes an entire column    |      |
+|Searching for words     |Searching for a list of words rather than just `1` at a time    |      |
+|Searching a column                |Searching a specific column for a value (rather than the whole table)    |      |
+|Sorting information                |Sorting by more than one column at a time     |      |
+|Deleting names                |Deleting a name in `data_creator.py` for it to no longer exist in the `registry.csv`     | Look into the `table_builder.py`     |
+|                |     |      |
+|                |     |      |
+|                |     |      |
+|                |     |      |
 
 This list is not meant to be exhaustive. It's possible that you'll come up with a few more unique to your neighborhood. When you have an idea, _file the issue_ and get to work!
 
 ## Submitting `datamart` Content
-
-Considering that the work you're doing for the `bodega` will be in a particular `branch` of the repository, there's a small adjustment that has to be made to our normal `add`, `commit`, `push` process.
 
 When you're ready to push to GitHub, do the normal `add` and `commit` routines. Recall:
 
@@ -296,10 +301,10 @@ However, when it comes to push, run this slightly expanded command:
 git push origin YOUR_BRANCH_NAME
 ```
 
-We're still using `git push`, but this time we're adding an extra layer of information to the command; to be precise, we're specifically instructing `git` to push our changes to a particular branch of the repository (*your* branch). In the example regarding the `bodega_cat`, the command to run would look like:
+We're still using `git push`, but this time we're adding an extra layer of information to the command; to be precise, we're specifically instructing `git` to push our changes to a particular branch of the repository (*your* branch). In the example regarding the `table_builder`, the command to run would look like:
 
 ```
-git push origin east-stoplight
+git push origin table_builder
 ```
 
 ### A "Pull Request"
@@ -354,10 +359,18 @@ First, `fetch` all of the changes from the `remote` (GitHub):
 git fetch --all
 ```
 
-Once you've received this information, to `checkout` the `east-stoplight` branch (for example):
+Once you've received this information, to `checkout` the `table-analyzer` branch (for example):
 
 ```
 git checkout --track origin/table-analyzer
 ```
 
 This will copy that branch from GitHub to your local workspace. You'll now also be able to `push` and `pull` to/from it.
+
+## `term-world` Server Backup Policy
+
+**While we may use this server to store code, you are responsible for using GitHub as your main backup.**
+
+In the event that the `term-world` server goes down for any unforeseen reason, your work may be lost. Though this server is backed up on a regular (i.e., weekly) basis, there is no guarantee that up-to-the-minute data for your work will be restored.
+
+Remember: to err is human; to back up your work is *divine*.
