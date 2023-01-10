@@ -1,13 +1,13 @@
 
 | Date              |          |
 |:------------------|:---------|
-| 5 October 2022 | Assigned |
-| 16 October 2022    | Due      |
+| Todo | Assigned |
+| Todo    | Due      |
 | Status            | [![GatorGrader](../../actions/workflows/main.yml/badge.svg)](../../actions/workflows/main.yml) |
 
 # GLORIOUS NEW DATA PROJECT ON HORIZON! FUTURE OF `term-world` LOOKING BRIGHTER THAN EVER!
 
-**Reported by `Official Mayor-Endorsed News` on `5 October 2022`**
+**Reported by `Official Mayor-Endorsed News` on `Tdoo`**
 
 Welcome to the inaugural report from `Official Mayor-Endorsed News`!
 Given the recent defunding and dissolution of TNN following last week's
@@ -199,11 +199,18 @@ To make an improvement proposal, you must _create an issue_ on this repository. 
 The functionality for the `datamart` is pretty basic. You probably will get frustrated when you're adding things to columns,
 and the program takes _forever_ to add to all of the rows (you have to do it 1-by-1, as you'll find out). Suggestions for improvements for this work are a bit easier to come up with, such as:
 
-* Adding a list of values as a column (rather than 1-by-1)
-* Deleting an entire column
-* Searching for a list of words rather than just `1` at a time
-* Searching a specific column for a value (rather than the whole table)
-* Sorting by more than one column at a time
+|Improvement Suggestions |Description        |Example(s)         |
+|:--------------------|:------------------|:----------|
+|Adding lists            |Adding a list of values as a column (rather than 1-by-1)     |      |
+|Deleting column              |Adding a functionality that deletes an entire column    |      |
+|Searching for words     |Searching for a list of words rather than just `1` at a time    |      |
+|Searching a column                |Searching a specific column for a value (rather than the whole table)    |      |
+|Sorting information                |Sorting by more than one column at a time     |      |
+|Deleting names                |Deleting a name in `data_creator.py` for it to no longer exist in the `registry.csv`     | Look into the `table_builder.py`     |
+|                |     |      |
+|                |     |      |
+|                |     |      |
+|                |     |      |
 
 This list is not meant to be exhaustive. It's possible that you'll come up with a few more unique to your neighborhood. When you have an idea, _file the issue_ and get to work!
 
