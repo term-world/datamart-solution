@@ -57,35 +57,6 @@ You'll complete several main tasks:
 
 [![YouTube thumbnail](http://img.youtube.com/vi/4eapZtdVpDM/hqdefault.jpg)](https://youtube.com/playlist?list=PLJvBsjwXNdlFZ377qYXa76_1c-WXTuhA5)
 
-## Accessing `datamart` Content
-
-In order to complete the workload for the `datamart` you'll first need to `clone` the `datamart` repository into your `workshop`.
-
-When you `clone` a repository you're duplicating its contents and adding them to your local workspace. Since you'll be working collaboratively with your neighbors, you'll each need your own copy of the `datamart` to work with.
-
-In order to keep some of the magic (read: somewhat convoluted code) that makes `term-world` work the way it does, **you are required to clone all additional repositories within the `workshop`, located within your `garage`.**
-
-Head to GitHub and:
-* click on the green `Code` button
-* ensure that `SSH` is selected
-* copy the link that appears in the window below
-
-It might look something like `git@github.com:term-world/ix-datamart`.
-
-Once you've copied this link, navigate to your terminal window and ensure you're still in the appropriate place (in this case, the topmost level of your `workshop`). Then, enter the command:
-
-```
-git clone COPIED-LINK-HERE
-```
-
-Be sure to replace the fragment `COPIED-LINK-HERE` with the link you copied. In the example regarding `ix-datamart`, the full command would look like:
-
-```
-git clone git@github.com:term-world/ix-datamart
-```
-
-While `pull` is used to *update* the contents of a repository that already exists in your local workspace, `clone` is used to *replicate* the contents of a repository from GitHub and copy them to your local workspace.
-
 ## Completing `datamart` content
 
 The `datamart` is composed of three distinct pieces, sorted into folders:
@@ -211,45 +182,7 @@ Your [reflection](office/reflection.md) should report the outcomes of these oper
 
 All of the above tasks completed, finish the collaborative reflection located in the `office`.
 
-## Branching `datamart` content
-
-Even when working collaboratively with others on a single project, you'll still need to `add`, `commit`, and `push` your work. However, there's a few additional steps that have to be taken to keep your group's workflow organized.
-
-Each repository has a `main` version of itself that represents exactly that, the "main" version of the repository. This is the version that is cloned whenever somebody runs a `git clone` command with that repository as its target, and the contents of `main` are what is pulled when somebody updates their local workspace's version of the repository with `git pull`.
-
-However, each repository can also have multiple alternative versions of itself that simultaneously exist. These versions are referred to as "branches".
-
-Branches are *very* useful when collaborating with other people on the same project--they can keep multiple portions of a developing project organized, and keep partially implemented (or incomplete) code from interfering with other developers.
-
-You'll see firsthand just how useful this is as we work collaboratively over the next couple weeks, but for now, trust us: going through the extra couple of steps to branch your work when starting a new project (*especially* when working with other people) is a proactive step to avoiding many a headache later in the development process.
-
-So, how do we do that?
-
-First things first, navigate to the repository being worked on in your terminal window. For this content, that's the cloned `traffic-circle` in your `workshop`.
-
-Then, run the following command:
-
-```
-git checkout -b FEATURE
-```
-
-Just be sure to replace the `FEATURE` fragment with a name that succinctly describes the work you're contributing to the overall project. (You might also consider including your username within the branch name if you think it'll help your group stay organized.) For instance, if the user `dluman` and someone else are working on the `east` folders' `Stoplight.py`, `traffic-circle`, he might run the command:
-
-```
-git checkout -b table-analyzer
-```
-
-**Whenever you're starting your work, you should always `git pull` from any branches you're using in tandem with _other folks_. This guarantees that you solve content issues early and _often_.**
-
-## Evaluating `datamart` Content
-
-In order to run the `grader` for this week's work, you'll need to be in the topmost level of the `datamart` folder (which should have been cloned within the `workshop`). Once there, run the command:
-
-```
-gatorgrade
-```
-
-### Making an improvement proposal
+## Making an improvement proposal
 
 This assignment begins your opportunity to propose and improve the world of `term-world` at-large. For this assignment, proposals may include making graphics to improve the `bodega` site experience, creating new items or actions in the `traffic-circle` itself or another assignment-related improvement not contemplated in the prior narrow categories.
 
@@ -274,90 +207,10 @@ and the program takes _forever_ to add to all of the rows (you have to do it 1-b
 
 This list is not meant to be exhaustive. It's possible that you'll come up with a few more unique to your neighborhood. When you have an idea, _file the issue_ and get to work!
 
-## Submitting `datamart` Content
+## Backup Policy Reminder
 
-Considering that the work you're doing for the `bodega` will be in a particular `branch` of the repository, there's a small adjustment that has to be made to our normal `add`, `commit`, `push` process.
+**While we may use this server to store code, you are responsible for using GitHub as your main backup.**
 
-When you're ready to push to GitHub, do the normal `add` and `commit` routines. Recall:
+In the event that the `term-world` server goes down for any unforeseen reason, your work may be lost. Though this server is backed up on a regular (i.e. weekly) basis, there is no guarantee that up-to-the-minute data for your work will be restored.
 
-```
-git add -A
-```
-
-```
-git commit -m "Descriptive commit message"
-```
-
-### Pushing to a branch
-
-However, when it comes to push, run this slightly expanded command:
-
-```
-git push origin YOUR_BRANCH_NAME
-```
-
-We're still using `git push`, but this time we're adding an extra layer of information to the command; to be precise, we're specifically instructing `git` to push our changes to a particular branch of the repository (*your* branch). In the example regarding the `bodega_cat`, the command to run would look like:
-
-```
-git push origin east-stoplight
-```
-
-### A "Pull Request"
-
-Once you've completed this step, you'll now need to create a **pull request** on GitHub. This is a formal request to other collaborators on your project to review the code you've submitted--an important step when working together on the same project.
-
-In a web browser, navigate to the repository page on GitHub (for the repository that you've just submitted new changes for). Towards the upper-left corner you'll see a dropdown that will have `main` selected as default (`main` being one of the branches for your repository, this is the "production-ready" branch). Select your branch from the dropdown, and you may see a yellow box prompting you to create a pull request; click that if you see it, or navigate to `Pull Requests` at the top and subsequently click the green `New pull request` button.
-
-Now, in the top left corner select the branch you wish to add your updated changes to, or the "base" branch--generally speaking this will likely be `main`, the aforementioned "production-ready" branch. In the bar on the righthand side, add Reviewers to the pull request (this should be all of your neighborhood collaborators). Finally, click `Create pull request`.
-
-You'll also be responsible for responding to and reviewing pull requests created by other collaborators on your team. Comment on each other's work about changes you'd like to see made to code submitted, and be sure to keep all communication both specific and professional.
-
-## Merging `datamart` Content on GitHub
-
-After all collaborators have had a chance to weigh in on a new pull request, if the work is up to snuff and ready to join the "production-ready" `main` branch, then your designated neighborhood team lead will have to merge that work into the `main` branch.
-
-If you *are* said team lead, you'll need to navigate to the pull request on GitHub. If there are no "conflicts" (i.e., differences that can't be automatically handled by GitHub) between the pull request's branch and the `main` branch, simply click the `Commit merge` button and the merge is complete!
-
-In some cases however, you'll have to specify what parts of a pull request make it into the `main` branch. If that's the case, you'll instead see a `Resolve conflicts` button. Click that and you'll be presented with a proposed merged copy of the code, with some extra lines added in. Something akin to:
-
-```
-<<<<<<
-x = "this_is_a_line_of_code"
-=======
-x = "this_is_a_different_line_of_code"
->>>>>>
-```
-
-To resolve said conflicts, you'll need to delete the portion of code you don't want to appear in the final product, as well as any `<<<<<<`, `======`, or `>>>>>>` lines.
-
-Once complete, click `Mark as resolved` followed by `Commit merge`, and the changes on the branch will be joined with the `main` branch!
-
-## Updating `datamart` Content in Your Local Workspace
-
-At some point you may wish to update the content in your local workspace with the changes being implemented by your teammates. 
-
-To do so, `git checkout main` (or other collaborative branch) and run the command:
-
-```
-git pull
-```
-
-This will update your local workspace with the content stored in the `main` branch.
-
-### `checkout` other folks' branches
-
-It's _very_ likely that you'll run into the need to `checkout` a branch that GitHub has, but you don't. Here's a reminder of the steps to do that.
-
-First, `fetch` all of the changes from the `remote` (GitHub):
-
-```
-git fetch --all
-```
-
-Once you've received this information, to `checkout` the `east-stoplight` branch (for example):
-
-```
-git checkout --track origin/table-analyzer
-```
-
-This will copy that branch from GitHub to your local workspace. You'll now also be able to `push` and `pull` to/from it.
+Remember: to err is human; to back up your work is *divine*.
